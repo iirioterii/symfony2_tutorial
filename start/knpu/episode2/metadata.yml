@@ -1,0 +1,100 @@
+title:  Starting in Symfony2: Course 2 (2.4+)
+summary: |
+    Over the next hour, we're going to take you through some of the most difficult areas of Symfony learning all about security, forms, and parts of Doctrine. We'll also see testing and learn more about how Symfony's service container works. When you get to the end, you'll be well on your way to mastering Symfony.
+
+    One of the things we'll be creating is a security system that stores users in the database. This is functionality similar to what's offered by the very popular FOSUserBundle. That bundle is really great, but until you understand how the security system works, you're going to run into limitations. Once you do, you'll feel at home using FOSUserBundle or configuring the security system all on your own.
+
+    Highlights:
+
+    * Learning and building a form-login security system from scratch
+    * Loading users from the database
+    * Using AdvancedUserInterface and UserProviderInterface classes to give us more control over login
+    * Doctrine Repositories and Querying
+    * Building forms: creating fields, the data_class option, form type classes
+    * Form field options & HTML5 validation
+    * Form rendering
+    * Functional Testing!
+
+    ... and of course, tips, tricks, best practices and other little features along the way!
+
+illustration: sf2-ep2.png
+tuts_hero:
+    start_step:  "MindTrick: Twig whitespace control"
+    finish_step: "Remember Me: Setting it all up"
+
+chapters:
+    intro:
+        video_key:  140200505
+        is_free:    true
+    "basic-security":
+        video_key:  140200506
+        is_free:    true
+    "authorization-access-control":
+        video_key:  140200507
+        is_free:    true
+    "login-form":
+        video_key:  140200510
+    "login-form2":
+        video_key:  140200508
+    "logout":
+        video_key:  140200509
+    "twig-security-is-authenticated":
+        video_key:  140200515
+    "deny-access-controller":
+        video_key:  140200513
+    "entity-security":
+        video_key:  140200512
+    "saving-users":
+        video_key:  140200516
+    "roles-disabling-user":
+        video_key:  140200517
+    "repository":
+        video_key:  140200514
+    "query-builder":
+        video_key:  140200518
+    "user-provider":
+        video_key:  140200519
+    "user-serialization":
+        video_key:  140200520
+    "registration-form":
+        video_key:  140200522
+    "form-rendering":
+        video_key:  140200521
+    "repeated-compound-fields":
+        video_key:  140200524
+    "form-submit":
+        video_key:  140200526
+    "form-data":
+        video_key:  140200525
+    "plain-password":
+        video_key:  140200528
+    "form-type-class":
+        video_key:  140200527
+    "field-options-html5":
+        video_key:  140200530
+    "registration-validation":
+        video_key:  140200532
+    "flash-message":
+        video_key:  140200534
+    "auto-login":
+        video_key:  140200533
+    "testing":
+        video_key:  140200535
+    "testing-forms":
+        video_key:  140200536
+    "testing-data":
+        video_key:  140200537
+    "container-doctrine":
+        video_key:  140200539
+    "after-dinner-mint":
+        video_key:  140200541
+    "role-hierarchies":
+        video_key:  140200540
+    "impersonation":
+        video_key:  140200543
+    "secure-every-page":
+        video_key:  140200544
+    "accessing-security-user":
+        video_key:  140200545
+    "remember-me":
+        video_key:  140200546
