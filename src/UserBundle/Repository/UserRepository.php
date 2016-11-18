@@ -3,6 +3,7 @@
 namespace UserBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 /**
  * UserRepository
@@ -12,4 +13,17 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
+    /**
+     * @param $usernameOrEmail
+     * @return User|null
+     */
+    public function findOneByUsernameOrEmail($usernameOrEmail)
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.username = :username OR u.email = :email')
+            ->setParameter('username', $usernameOrEmail)
+            ->setParameter('email', $usernameOrEmail)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
 }
