@@ -5,7 +5,7 @@ security:
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         our_db_users:
-            entity: { class: UserBundle:User, property: username }
+            entity: { class: UserBundle:User }
 
 
     firewalls:

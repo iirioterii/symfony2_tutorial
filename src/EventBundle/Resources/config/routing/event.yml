@@ -1,6 +1,6 @@
 event_index:
     path:     /
-    defaults: { _controller: "EventBundle:Event:index" }
+    defaults: { _controller: "EventBundle:Event:index", name: event }
     methods:  GET
 
 event_show:
