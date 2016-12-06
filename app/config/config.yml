@@ -9,6 +9,7 @@ imports:
 parameters:
     locale: en
     google_map_api_key: AIzaSyB6K6veJUTv9tNvK1pqc2ixz9CeZXEFp4E
+    our_assets_version: 1
 
 framework:
     #esi:             ~
@@ -24,6 +25,9 @@ framework:
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
+        assets_version: %our_assets_version%
+        assets_version_format: "%%s?v=%%s"
+        # assets_base_url: //symfony2
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
@@ -39,6 +43,9 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         google_map_api_key: '%google_map_api_key%'
+    form:
+        resources:
+            - "::form_theme.html.twig"
 
 # Doctrine Configuration
 doctrine:
@@ -75,6 +82,8 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+        uglifycss:
+            bin: "%kernel.root_dir%/../node_modules/.bin/uglifycss"
 
 #fos_user:
 #    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'

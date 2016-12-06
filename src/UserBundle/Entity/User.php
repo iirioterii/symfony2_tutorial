@@ -37,11 +37,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @var string
-     * @Assert\NotBlank()
-     * @Assert\Regex(
-     *     pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/",
-     *     message="Use 1 upper case letter, 1 lower case letter, and 1 number"
-     * )
+     *
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;

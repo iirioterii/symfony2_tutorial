@@ -1,0 +1,7 @@
+{
+  "name": "symfony2",
+  "version": "0.0.1",
+  "dependencies": {
+    "uglifycss": "0.0.25"
+  }
+}

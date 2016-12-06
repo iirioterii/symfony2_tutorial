@@ -3,7 +3,7 @@
 {% block stylesheets %}
     {{ parent() }}
 
-    <link rel="stylesheet" href="{{ asset('bundles/user/css/login.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/user/css/login.css') }}"/>
 {% endblock %}
 
 {% block body %}
@@ -11,11 +11,13 @@
         <article>
             <h1>Register</h1>
 
-            <form action="{{ path('user_register') }}" method="post" novalidate="novalidate">
+            <form action="{{ path('user_register') }}" method="post">
 
                 {{ form_errors(form) }}
 
-                {{ form_row(form.username) }}
+                {{ form_row(form.username, {
+                    'attr': {'class': 'a-clever-class'}
+                }) }}
                 {{ form_row(form.email) }}
                 {{ form_row(form.plainPassword.first, {
                     'label': 'Password'
@@ -26,7 +28,7 @@
 
                 {{ form_rest(form) }}
 
-                <input type="submit" value="Register!" class="btn btn-primary"/>
+                <input id="register" type="submit" value="Register!" class="btn btn-primary"/>
             </form>
         </article>
     </section>

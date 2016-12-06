@@ -33,7 +33,7 @@ class EventController extends Controller
      */
     public function newAction(Request $request)
     {
-        $this->enforceUserSecurity();
+        $this->enforceUserSecurity('ROLE_EVENT_NEW');
 
         $event = new Event();
         $form = $this->createForm('EventBundle\Form\EventType', $event);
@@ -42,7 +42,7 @@ class EventController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($event);
-            $em->flush($event);
+            $em->flush();
 
             return $this->redirectToRoute('event_show', array('id' => $event->getId()));
         }
@@ -128,10 +128,10 @@ class EventController extends Controller
         ;
     }
 
-    private function enforceUserSecurity()
+    private function enforceUserSecurity($role = 'ROLE_USER')
     {
-        if(!$this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
-            throw $this->createAccessDeniedException('You need to have user role');
+        if(!$this->get('security.authorization_checker')->isGranted($role)) {
+            throw $this->createAccessDeniedException('You need to have ' . $role);
         };
     }
 }
